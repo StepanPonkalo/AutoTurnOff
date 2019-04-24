@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoTurnOff", "AutoTurnOff\AutoTurnOff.csproj", "{BAE6A2B4-5E31-4216-AAC4-1C45F11B650B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAE6A2B4-5E31-4216-AAC4-1C45F11B650B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAE6A2B4-5E31-4216-AAC4-1C45F11B650B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAE6A2B4-5E31-4216-AAC4-1C45F11B650B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAE6A2B4-5E31-4216-AAC4-1C45F11B650B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1588A23-6174-46DE-A0AC-13E6C0E45CE4}
+	EndGlobalSection
+EndGlobal
