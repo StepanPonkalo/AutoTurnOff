@@ -22,11 +22,8 @@ namespace AutoTurnOff
 
             if (!IsStartupItem())
             {
-                Console.WriteLine($"AutoTurnOff is running at path{path}");
-
-                rkApp.SetValue(appName, path);
-            }
-
+                AddRegistryKey();
+            }  
             TimeCheck();
         }
 
@@ -34,9 +31,37 @@ namespace AutoTurnOff
         {
             while (true)
             {
-                Console.ReadKey();
-                ShutDownAt = ShutDownAt + 1;
+                var r = Console.ReadKey();
+
+                if (r.KeyChar == 'r' || r.KeyChar == 'R')
+                {
+                    if (IsStartupItem())
+                    {
+                        RemoveRegistryKey();
+                    }
+                }else if (r.KeyChar == 's' || r.KeyChar == 'S')
+                {
+                    System.Environment.Exit(0);
+                }
+                else
+                {
+                    ShutDownAt = ShutDownAt + 1;
+                }
             }
+        }
+
+        private static void AddRegistryKey()
+        {
+            Console.WriteLine($"AutoTurnOff is running at path{path}");
+
+            rkApp.SetValue(appName, path);
+        }
+
+        private static void RemoveRegistryKey()
+        {
+            Console.WriteLine($"\nAutoTurnOff will be removed from AutoStart");
+
+            rkApp.DeleteValue(appName);
         }
 
         private static bool IsStartupItem()
@@ -72,7 +97,7 @@ namespace AutoTurnOff
         {
             while (DateTime.Now.Hour != ShutDownAt)
             {
-                Console.WriteLine($"It's not time yet {DateTime.Now.ToShortTimeString()}");
+                Console.WriteLine($"It's not time yet {DateTime.Now.ToShortTimeString()} it will Shutdown at {ShutDownAt} o'clock");
                 Thread.Sleep(1000 * 60);
             }
             ShutDown();
